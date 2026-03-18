@@ -1,3 +1,0 @@
-[console_scripts]
-trae-mysql-mcp = trae_mysql_mcp.cli:main
-
