@@ -68,7 +68,7 @@ MultiMyMCP/
 ### 1. 克隆项目
 
 ```bash
-git clone https://github.com/trae/multimymcp.git
+git clone git@gitee.com:wanhonglei/multi-mysql-mcp.git
 cd multimymcp
 ```
 
@@ -314,10 +314,10 @@ INSERT INTO users (name, email) VALUES ('Alice', 'alice@example.com')
 ### 基本使用
 
 ```python
-from multimymcp import TraeMySQLMCP
+from multimymcp import MultiMyMCP
 
 # 初始化 MCP
-mcp = TraeMySQLMCP()
+mcp = MultiMyMCP()
 
 # 连接数据源
 mcp.connect('default')
@@ -333,9 +333,9 @@ mcp.disconnect()
 ### 多数据源配置
 
 ```python
-from multimymcp import TraeMySQLMCP, DataSourceConfig
+from multimymcp import MultiMyMCP, DataSourceConfig
 
-mcp = TraeMySQLMCP()
+mcp = MultiMyMCP()
 
 # 添加主库
 master_config = DataSourceConfig(
@@ -370,9 +370,9 @@ result = mcp.execute('SELECT * FROM users')
 ### 事务处理
 
 ```python
-from multimymcp import TraeMySQLMCP
+from multimymcp import MultiMyMCP
 
-mcp = TraeMySQLMCP()
+mcp = MultiMyMCP()
 mcp.connect('default')
 
 # 使用事务
