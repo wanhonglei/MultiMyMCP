@@ -355,9 +355,9 @@ mcp.disconnect()
 ### 多数据源配置
 
 ```python
-from multimymcp import TraeMySQLMCP, DataSourceConfig
+from multimymcp import MultiMyMCP, DataSourceConfig
 
-mcp = TraeMySQLMCP()
+mcp = MultiMyMCP()
 
 # 添加主库
 master_config = DataSourceConfig(
@@ -392,9 +392,9 @@ result = mcp.execute('SELECT * FROM users')
 ### 事务处理
 
 ```python
-from multimymcp import TraeMySQLMCP
+from multimymcp import MultiMyMCP
 
-mcp = TraeMySQLMCP()
+mcp = MultiMyMCP()
 mcp.connect('default')
 
 # 使用事务

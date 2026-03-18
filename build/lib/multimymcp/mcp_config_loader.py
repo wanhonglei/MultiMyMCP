@@ -26,6 +26,7 @@ class MCPConfigLoader:
         self.home_dir = Path.home()
         self.config_dir = self.home_dir / ".trae-mysql-mcp"
         self.config_file = self.config_dir / "mcp_config.json5"
+        self.multimymcp_config_file = self.home_dir / ".multimymcp" / "mcp_config.json5"
     
     def get_default_config_path(self) -> Path:
         """
@@ -56,6 +57,8 @@ class MCPConfigLoader:
             path = Path(os.getenv("TRAE_MYSQL_MCP_CONFIG"))
         elif self.config_file.exists():
             path = self.config_file
+        elif self.multimymcp_config_file.exists():
+            path = self.multimymcp_config_file
         else:
             return self._get_default_config()
         
